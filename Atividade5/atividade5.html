@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        div {
+            width: 500px;
+            height: 500px;
+            background-color: #808080;
+        }
+
+    @media (max-width: 420px) {
+        div {
+            background-color: #808080;
+        }
+        h2::after {
+            content: "Cinza";
+        }
+    }
+
+    @media (min-width: 421px) and (max-width: 768px) {
+        div {
+            background-color: #FF8C00;
+        }
+        h2::after {
+            content: "Laranja";
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        div {
+            background-color: #FF00FF;
+        }
+        h2::after {
+            content: "Magenta";
+        }
+    }
+
+    @media (min-width: 1025px) and (max-width: 1080px) {
+        div {
+            background-color: #DC143C;
+        }
+        h2::after {
+            content: "Vermelho";
+        }
+    }
+
+    @media (min-width: 1081px) and (max-width: 1366px) {
+        div {
+            background-color: #4169E1;
+        }
+        h2::after {
+            content: "Azul";
+        }
+    }
+
+    @media (min-width: 1367px) and (max-width: 1920px) {
+        div {
+            background-color: #FFD700;
+        }
+        h2::after {
+            content: "Amarelo";
+        }
+    }
+
+    @media (min-width: 1921px) {
+        div {
+            background-color: #228B22;
+        }
+        h2::after {
+            content: "Verde";
+        }
+    }
+</style>
+
+</head>
+<body>
+    <div>
+        <h2></h2>
+    </div>
+</body>
+</html>
