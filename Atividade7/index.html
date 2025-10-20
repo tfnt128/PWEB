@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedra, Papel ou Tesoura</title>
+
+</head>
+<body>
+<div class="container">
+<p>Pedra  /  Papel  /  Tesoura</p>
+<div class="botoes">
+<button onclick="jogar('pedra')"></button>
+<button onclick="jogar('papel')"></button>
+<button onclick="jogar('tesoura')"></button>
+</div>
+<div id="resultado"></div>
+</div>
+<script>
+   const opcoes = ['pedra', 'papel', 'tesoura'];
+
+   function jogar(escolhaUsuario) {
+
+       const escolhaComputador = opcoes[Math.floor(Math.random() * 3)];
+
+       let resultado = '';
+       let classe = '';
+       if (escolhaUsuario === escolhaComputador) {
+           resultado = 'Empate.';
+           classe = 'empate';
+       } else if (
+           (escolhaUsuario === 'pedra' && escolhaComputador === 'tesoura') ||
+           (escolhaUsuario === 'papel' && escolhaComputador === 'pedra') ||
+           (escolhaUsuario === 'tesoura' && escolhaComputador === 'papel')
+       ) {
+           resultado = 'Você venceu.';
+           classe = 'vitoria';
+       } else {
+           resultado = 'Computador venceu.';
+           classe = 'derrota';
+       }
+
+       document.getElementById('resultado').innerHTML = `
+<div class="resultado ${classe}">
+<div class="escolhas">
+                   Jogador: ${escolhaUsuario} Computador: ${escolhaComputador}
+</div>
+<strong>${resultado}</strong>
+</div>
+       `;
+   }
+</script>
+
+</body>
+</html>
